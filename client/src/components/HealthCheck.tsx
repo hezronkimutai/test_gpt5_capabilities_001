@@ -4,7 +4,7 @@ import type { HealthResponse } from '../types/shared';
 
 type Props = { fetcher?: () => Promise<HealthResponse> };
 
-export function HealthCheck({ fetcher = api.health }: Props) {
+function HealthCheck({ fetcher = api.health }: Props) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'error'>('idle');
   const [health, setHealth] = useState<HealthResponse | null>(null);
   const [error, setError] = useState<string | null>(null);

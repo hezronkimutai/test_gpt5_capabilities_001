@@ -17,7 +17,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - name: Install workspace tools
-        run: pnpm add -w -D eslint prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin
+        run: pnpm add -D eslint prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin
       - name: Install client deps
         run: cd client && pnpm install
       - name: Install server deps

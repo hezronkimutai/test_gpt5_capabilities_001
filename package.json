@@ -14,7 +14,7 @@
     "lint": "pnpm -r lint",
     "format": "pnpm -r format",
     "test": "pnpm -r test",
-  "typecheck": "pnpm -r typecheck",
+    "typecheck": "pnpm -r typecheck",
   "prepare": "echo Workspace ready",
   "mem:add": "bash ./scripts/memory.sh add",
   "mem:list": "bash ./scripts/memory.sh list"

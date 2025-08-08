@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { HealthCheck } from './HealthCheck';
+import HealthCheck from './HealthCheck';
 
 it('renders API health status', async () => {
   const fetcher = async () => ({ 

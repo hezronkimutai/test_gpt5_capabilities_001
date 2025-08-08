@@ -20,7 +20,6 @@ export function validateEnvironment(): Environment {
     // Use console.error instead of logger to avoid circular dependency
     console.error('❌ Invalid environment variables:');
     console.error(result.error.flatten().fieldErrors);
-    // eslint-disable-next-line unicorn/no-process-exit
     process.exit(1);
   }
   

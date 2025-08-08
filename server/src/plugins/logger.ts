@@ -3,6 +3,7 @@ import pino from 'pino';
 function createLogger() {
   try {
     // Try to use validated environment if available
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { getEnv } = require('../config/env');
     const env = getEnv();
     return pino({
