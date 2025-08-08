@@ -1,0 +1,22 @@
+{
+  "name": "test_gpt5_capabilities_001",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Monorepo for client and server with pnpm workspaces",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter server start",
+    "lint": "pnpm -r lint",
+    "format": "pnpm -r format",
+    "test": "pnpm -r test",
+  "typecheck": "pnpm -r typecheck",
+  "prepare": "echo Workspace ready",
+  "mem:add": "bash ./scripts/memory.sh add",
+  "mem:list": "bash ./scripts/memory.sh list"
+  }
+}

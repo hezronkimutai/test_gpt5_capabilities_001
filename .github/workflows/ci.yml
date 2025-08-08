@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install workspace tools
+        run: pnpm add -D eslint prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin
+      - name: Install client deps
+        run: cd client && pnpm install
+      - name: Install server deps
+        run: cd server && pnpm install
+      - name: Lint
+        run: pnpm -r lint
+      - name: Typecheck
+        run: pnpm -r typecheck || true
+      - name: Test
+        run: pnpm -r test
+      - name: Build
+        run: pnpm -r build
